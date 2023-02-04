@@ -1,4 +1,7 @@
 from pptx import Presentation
+from pptx.util import Inches
+from pptx.enum.shapes import MSO_SHAPE_TYPE
+from pptx.enum.shapes import MSO_SHAPE
 from googletrans import Translator
 import pytesseract
 import imageTrans
@@ -7,13 +10,25 @@ import requests
 api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
 
 
+print('here')
 prs = Presentation("po.pptx")
 lang = 'es'
 
 for slide in prs.slides:
     for shape in slide.shapes:
         if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
-            shape.image = imageTrans.translateImg()
+            print("The shape is a picture.")
+
+            # Add the picture to the slide
+            left = shape.left
+            top = shape.top
+            filepath= imageTrans.translateImg()
+            pic = slide.shapes.add_picture(
+                filepath, left, top,shape.width, shape.height
+            )
+        else:
+            print("The shape is not a picture.")
+
         if shape.has_text_frame:
             for paragraph in shape.text_frame.paragraphs:
                 for run in paragraph.runs:
@@ -31,7 +46,7 @@ for slide in prs.slides:
                         print('Translation failed:', response.text)
 
 
-imageTrans.translateImg()
+
 
 prs.save("po.pptx")
 print("NOW HERE")

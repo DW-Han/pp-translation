@@ -49,11 +49,14 @@ def translateImg():
     # Add the text to the image
     cv2.putText(img, text , (text_x, text_y), font, 1, color, 2)
 
-
+    '''
     # Show the image with the added text
     cv2.imshow("Image with Text", img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    
+    '''
     print(text)
-    return img
+
+    filename= 'output.jpg'
+    cv2.imwrite(filename, img)
+    return filename
