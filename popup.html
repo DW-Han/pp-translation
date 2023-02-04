@@ -2,17 +2,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="celebrate.css" />
     <script src="script.js"></script>
 </head>
+<style>
+    #message{
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        height: 100%;
+    }
+</style>
 <body>
-    <div>
-        <button id="keep" onclick="deleteDownload()">
-            Keep Original 
-        </button>
-        <button id="noKeep">
-            Delete Original
-        </button>
+    <div class="confetti">
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
     </div>
+    <span id="message">
+        Your powerpoint was succesfully downloaded and translated!
+    </span>
 </body>
 <script nonce="your-unique-nonce">
     function deleteDownload(){

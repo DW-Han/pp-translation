@@ -10,6 +10,8 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
         if (downloadItems[0].filename.endsWith('.pptx')) {
           console.log(downloadItems[0].filename + ' is a PowerPoint presentation.');
 
+          callFunction();
+
           chrome.windows.create({
             url: "popup.html",
             type: "popup",
@@ -25,6 +27,21 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
       
     }
   });
+
+
+  function callFunction()
+  {
+    alert(1)
+    $.ajax({
+      url: "/translate/",
+      type:"POST",
+      lang: { "link": value },
+      link: { "link": "your data" },
+      success: function(response){
+          alert(response);
+      }
+  });
+  }
 
   chrome.downloads.onChanged.addListener(function(downloadDelta) {
     if (downloadDelta.state) {
