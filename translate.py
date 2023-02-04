@@ -11,9 +11,9 @@ app = Flask(__name__)
 def default(): 
     return redirect(url_for("translate"))
  
-@app.route("/translate/", methods=["GET", "POST"]) 
+@app.route("/translate/") 
 def translate(): 
-    return render_template("settings.html")
+    return render_template("setting.html")
 
 
   
