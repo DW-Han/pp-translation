@@ -7,9 +7,8 @@ import requests
 api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
 
 
-
 prs = Presentation("po.pptx")
-lang = 'zh-CN'
+lang = 'en'
 
 for slide in prs.slides:
     for shape in slide.shapes:
