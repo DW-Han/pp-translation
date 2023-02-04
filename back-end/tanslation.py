@@ -1,17 +1,19 @@
 from pptx import Presentation
 from googletrans import Translator
 import pytesseract
-
+import imageTrans
 import requests
 
 api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
 
 
 prs = Presentation("po.pptx")
-lang = 'en'
+lang = 'es'
 
 for slide in prs.slides:
     for shape in slide.shapes:
+        if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
+            shape.image = imageTrans.translateImg()
         if shape.has_text_frame:
             for paragraph in shape.text_frame.paragraphs:
                 for run in paragraph.runs:
@@ -29,7 +31,8 @@ for slide in prs.slides:
                         print('Translation failed:', response.text)
 
 
-                    
+imageTrans.translateImg()
+
 prs.save("po.pptx")
 print("NOW HERE")
 
