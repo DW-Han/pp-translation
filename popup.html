@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div>
+        <button id="keep" onclick="deleteDownload()">
+            Keep Original 
+        </button>
+        <button id="noKeep">
+            Delete Original
+        </button>
+    </div>
+</body>
+<script nonce="your-unique-nonce">
+    function deleteDownload(){
+    var but = document.getElementById("keep");
+    but.style.color = "red";
+}
+</script>
+</html>

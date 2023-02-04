@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Chrome extension</title>
+    <script src="background.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Bubbler One');
+    @import url('https://fonts.googleapis.com/css?family=Josefin Sans');
+    html{
+        border: 4px solid rgb(216, 127, 32);
+        background-color: rgba(255, 201, 120, 0.943);
+    }
+    body{
+        width: 200px;
+        height: 200px;
+    }
+    #buffer{
+        height: 100px;
+    }
+    #theTitle{
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        font-family: "Josefin Sans";
+        font-weight: bolder;
+        font-size: 30px;
+        text-shadow:2px 2px #5a5858;
+        color: rgb(5, 1, 39);
+
+        transition-property:color,text-shadow;
+        transition-duration: 0.5s;
+        transition-timing-function:ease-in;
+    }
+    #theTitle:hover{
+        text-shadow:2px 3px #de5100;
+    }
+    #settings{
+        
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        
+        font-family: "Josefin Sans";
+        font-size: 20px;
+    }
+    a:link{
+        text-decoration: none;
+    }
+
+</style>
+<body>
+    <div id="theTitle">
+        Power Point Translator
+    </div>
+    <div id="buffer">
+
+    </div>
+    <div id ="settings">
+        <a href="setting.html" target="_blank"> Go to Setting</a>
+    </div>
+</body>
+<script>
+
+
+</script>
+</html>
