@@ -101,7 +101,7 @@ html * {
   margin: 0;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 85%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -115,7 +115,7 @@ select{
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
     color: rgb(0, 0, 0);
-    background-color: rgb(195, 198, 199);
+    background-color: rgb(222, 225, 226);
     background-image: none;
     border: 1px solid rgb(41, 18, 18);
 }
@@ -131,7 +131,16 @@ select>option{
     border: 1px solid rgb(41, 18, 18);
 }
 
-
+.textboxHeader{
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
+.textbox{
+  position: absolute;
+  top: 35%;
+  left: 5%;
+}
 
 </style>
 
@@ -176,9 +185,21 @@ select>option{
               </div>
 
             </form>
-      </center>
+        </center>
+    </div>
+    <div class = "textboxHeader">
+      <strong> Instructions:</strong>
+      
+    </div>
+    <div class = "textbox">
+     <small>Set your source and destination languages, and then click save. 
+      <br>
+      Now you are good to go! Simply download your powerpoint and <br> it will be autotranslated for you.
+     </small>
+      
     </div>
   </div>
+  
  
 </body>
 
