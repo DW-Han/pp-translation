@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 @app.route("/") 
 def default(): 
-    return redirect(url_for("translate"))
+    return render_template('setting.html')
  
 @app.route("/translate/") 
 def translate(): 
