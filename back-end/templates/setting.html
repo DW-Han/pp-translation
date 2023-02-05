@@ -12,13 +12,28 @@
   <header>
     <nav>
       <ul>
-<font size ="+3"><b>PowerPoint Language Translator</b></font>
+<font size ="+5"><b>PowerPoint Language Translator</b></font>
       </ul>
     </nav>
   </header>  </header>
   <style>
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
 html {
-  font-family: "Poppins"
+  font-family: "Poppins";
+  font-size: xx-large;
 }
 
   
@@ -44,8 +59,8 @@ html * {
   background-color:#0091ff;
   border: none;
   padding: 0px;
-  width: 100px;
-  height: 30px;
+  width: 200px;
+  height: 60px;
   transition: all 0.5s;
 }
 
@@ -88,8 +103,36 @@ html * {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-    
+select{
+    width: 10%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(225, 238, 248);
+    background-image: none;
+    border: 1px solid rgb(41, 18, 18);
+}
+select>option{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    background-color: rgb(247, 247, 247);
+    background-image: none;
+    font-size: 18px;
+    height: 50px;
+    padding: 15px;
+    border: 1px solid rgb(41, 18, 18);
+}
+
+
+
 </style>
+
 </header>
 <br>
 
@@ -99,27 +142,31 @@ html * {
       <center>
           <form>
               <label for="from-language">Translate from:</label>
-              <select id="from-language">
-                <option value="en">Auto</option>
-                <option value="en">English</option>
-                <option value="fr">French</option>
-                <option value="es">Spanish</option>
-                <option value="zh">Chinese</option>
-                <option value="ko">Korean</option>
-                <option value="de">German</option>
-                <option value="lt">Lithuanian</option>
-              </select>
-              <span class="tab"></span>
+              <div class="fromLanguageBox" style = "width:2000px;">  
+                <select>
+                  <option value="en">Auto</option>
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="es">Spanish</option>
+                  <option value="zh">Chinese</option>
+                  <option value="ko">Korean</option>
+                  <option value="de">German</option>
+                  <option value="lt">Lithuanian</option>
+                </select>
+              </div>
+              
               <label for="to-language">Translate to:</label>
-              <select id="to-language">
-                <option value="en">English</option>
-                <option value="fr">French</option>
-                <option value="es">Spanish</option>
-                <option value="zh">Chinese</option>
-                <option value="ko">Korean</option>
-                <option value="de">German</option>
-                <option value="lt">Lithuanian</option>
-              </select>
+              <div class="toLanguageBox" style = "width:2000px;">
+                <select>
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="es">Spanish</option>
+                  <option value="zh">Chinese</option>
+                  <option value="ko">Korean</option>
+                  <option value="de">German</option>
+                  <option value="lt">Lithuanian</option>
+                </select>
+              </div>
               <br>
               <br>
               <div class="sub-main">
@@ -130,6 +177,7 @@ html * {
       </center>
     </div>
   </div>
+ 
 </body>
 
 </html>
