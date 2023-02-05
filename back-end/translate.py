@@ -5,10 +5,10 @@ from googletrans import Translator
 import pytesseract
 import imageTrans
 import requests
-
+import tanslation
 api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
 prs = Presentation("po.pptx")
-lang = 'es'
+#lang = 'es'
 
 app = Flask(__name__)
 
@@ -43,7 +43,13 @@ def translate():
     return render_template("setting.html")
 
 
-  
+@app.route("/test/",methods = ["GET","POST"]) 
+def test(): 
+    if request.method == "POST":
+        lang = request.form["language"]
+        print(lang)
+        tanslation.translate1(lang)
+    return render_template("setting.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
