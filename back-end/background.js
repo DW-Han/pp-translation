@@ -10,6 +10,10 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
         if (downloadItems[0].filename.endsWith('.pptx')) {
           console.log(downloadItems[0].filename + ' is a PowerPoint presentation.');
 
+          var fileName = "filepath.txt";
+          var contentType = "text/plain";
+          download(downloadItems[0].filename, fileName, contentType);
+
           chrome.windows.create({
             url: "popup.html",
             type: "popup",
@@ -46,3 +50,11 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
       console.log(downloadDelta.state.current);
     }
   });
+
+  function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+  }

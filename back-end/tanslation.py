@@ -6,14 +6,22 @@ from googletrans import Translator
 import pytesseract
 import imageTrans
 import requests
+import os
 
 api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
 
 
-print('here')
-prs = Presentation("po.pptx")
-lang = 'es'
 
+
+with open("C:\\Users\\kenny\\Downloads\\filepath.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+if os.path.exists("C:\\Users\\kenny\\Downloads\\filepath.txt"):
+    os.remove("C:\\Users\\kenny\\Downloads\\filepath.txt")
+
+prs = Presentation(content)
+lang = 'es'
 for slide in prs.slides:
     for shape in slide.shapes:
         if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
