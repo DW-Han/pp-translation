@@ -32,10 +32,10 @@ def translate1(lang):
                 left = shape.left
                 top = shape.top
                 
-                '''filepath= imageTrans.translateImg(lang)
+                filepath= imageTrans.translateImg(lang)
                 pic = slide.shapes.add_picture(
                     filepath, left, top,shape.width, shape.height
-                )'''
+                )
             else:
                 print("The shape is not a picture.")
 
