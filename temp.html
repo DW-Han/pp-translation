@@ -15,18 +15,14 @@
 <font size ="+5"><b>PowerPoint Language Translator</b></font>
       </ul>
     </nav>
-  </header>
-</header>
+  </header>  </header>
   <style>
-    html{
-      scroll-behavior: smooths;
-    }
 body {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     background-color: rgba(255, 201, 120, 0.1); 
-    overflow-x: hidden;
+
 }
  
 @keyframes fadeInAnimation {
@@ -145,21 +141,7 @@ select>option{
   top: 35%;
   left: 5%;
 }
-down{
-  animation: animate 1.5s linear infinite;
-}
 
-@keyframes animate{
-   0%{
-     opacity: 0;
-   }
-   50%{
-     opacity: 0.7;
-   }
-   100%{
-     opacity: 0;
-   }
- }
 </style>
 
 </header>
@@ -169,6 +151,7 @@ down{
     <div class = "main">
       <div class = "wrapper">
       <center>
+          <form>
               <label for="from-language">Translate from:</label>
               <div class="fromLanguageBox" style = "width:2000px;">  
                 <select>
@@ -185,24 +168,23 @@ down{
               
               <label for="to-language">Translate to:</label>
               <div class="toLanguageBox" style = "width:2000px;">
-                <form action="/test" method="post">
-                  <select name = "language">
-                    <option value="en">English</option>
-                    <option value="fr">French</option>
-                    <option value="es">Spanish</option>
-                    <option value="zh">Chinese</option>
-                    <option value="ko">Korean</option>
-                    <option value="de">German</option>
-                    <option value="lt">Lithuanian</option>
-                  </select>
-                  <br>
-                  <br>
-                <div class="sub-main">
-                  <input class = "button-two" type="submit" value="Submit">
-                </div>
-              
-                </form>
+                <select>
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="es">Spanish</option>
+                  <option value="zh">Chinese</option>
+                  <option value="ko">Korean</option>
+                  <option value="de">German</option>
+                  <option value="lt">Lithuanian</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div class="sub-main">
+                <button class="button-two"><font size="-1"><span>Save</span></font></button>
+              </div>
 
+            </form>
         </center>
     </div>
     <div class = "textboxHeader">
@@ -214,29 +196,11 @@ down{
       <br>
       Now you are good to go! Simply download your powerpoint and <br> it will be autotranslated for you.
      </small>
-     
-     <br>
-     <br>
-     <br>
-     <br>
-   
-
-    <h2>Learn More! <down>&#9660</down></h2>
-    
-   
-  
+      
     </div>
-    
   </div>
-
-  <div style="margin-top: 40%;">
-    <small>Welcome to our translation website! Our team has dedicated to providing high-quality translations for Power Point presentations.
-   We understand the importance of delivering presentations in a language that your audience can understand and connect with, 
-   which is why we offer translations in multiple languages. Our team of professionals is equipped with the latest tools and technology to 
-   ensure the highest level of accuracy and clarity in each translation. With years of experience in the industry, we have a proven track record
-    of delivering top-notch translations on time, every time. Contact us today to experience the power of language in your presentations!
- </small>
- </div>
+  
+ 
 </body>
 
 </html>

@@ -5,13 +5,11 @@ import numpy as np
 import requests
 
 api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
-tolang = 'lt'
-lang = 'en'
 
-def translateImg():
+def translateImg(tolang):
     # Read the image
-    img = cv2.imread("image.png")
-
+    img = cv2.imread('text.png')
+    
     # Get the size of the image
     height, width = img.shape[:2]
 

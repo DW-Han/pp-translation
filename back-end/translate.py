@@ -1,14 +1,19 @@
-import json
 from flask import Flask, render_template, url_for, request, redirect, session, jsonify
 from pptx import Presentation
 from googletrans import Translator
+from dotenv import load_dotenv
+import json
 import pytesseract
 import imageTrans
 import requests
+import tanslation
+import os
 
-api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
+load_dotenv()
+api_key = os.getenv('API_KEY')
+
 prs = Presentation("po.pptx")
-lang = 'es'
+#lang = 'es'
 
 app = Flask(__name__)
 
@@ -19,7 +24,7 @@ app = Flask(__name__)
 
 @app.route("/") 
 def default(): 
-    return redirect(url_for("translate"))
+    return render_template('setting.html')
  
 @app.route("/translate/") 
 def translate(): 
@@ -43,7 +48,13 @@ def translate():
     return render_template("setting.html")
 
 
-  
+@app.route("/test/",methods = ["GET","POST"]) 
+def test(): 
+    if request.method == "POST":
+        lang = request.form["language"]
+        print(lang)
+        tanslation.translate1(lang)
+    return render_template("setting.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
