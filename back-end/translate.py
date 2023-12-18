@@ -1,12 +1,17 @@
-import json
 from flask import Flask, render_template, url_for, request, redirect, session, jsonify
 from pptx import Presentation
 from googletrans import Translator
+from dotenv import load_dotenv
+import json
 import pytesseract
 import imageTrans
 import requests
 import tanslation
-api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
+import os
+
+load_dotenv()
+api_key = os.getenv('API_KEY')
+
 prs = Presentation("po.pptx")
 #lang = 'es'
 

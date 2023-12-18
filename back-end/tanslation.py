@@ -3,12 +3,14 @@ from pptx.util import Inches
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 from pptx.enum.shapes import MSO_SHAPE
 from googletrans import Translator
+from dotenv import load_dotenv
 import pytesseract
 import imageTrans
 import requests
 import os
 
-api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
+load_dotenv()
+api_key = os.getenv('API_KEY')
 
 
 def translate1(lang):
