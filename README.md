@@ -1,4 +1,6 @@
-# pp-translation
+# Power Point Translator Chrome Extension
 
+### Demo:
+![Demo](demo.gif)
 
-## it translates powerpoints!!!!!! yay
+2023 SheInnovates Winner
