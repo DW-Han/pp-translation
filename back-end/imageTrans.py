@@ -1,10 +1,13 @@
+from googletrans import Translator
+from dotenv import load_dotenv
 import cv2
 import pytesseract
-from googletrans import Translator
 import numpy as np
 import requests
+import os 
 
-api_key = 'AIzaSyA8jT11NKVpqK3HcP2ed5n30iQ3x6poffQ'
+load_dotenv()
+api_key = os.getenv('API_KEY')
 
 def translateImg(tolang):
     # Read the image
